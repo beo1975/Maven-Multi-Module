@@ -2,7 +2,9 @@ package com.benito.user.dto;
 
 public class User {
 
-	private int id;
+	private static String lineSeparator = System.getProperty("line.separator");
+
+	private final int id;
 	private String name;
 	private String mail;
 
@@ -14,10 +16,6 @@ public class User {
 
 	public int getId() {
 		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	public String getName() {
@@ -36,4 +34,26 @@ public class User {
 		this.mail = mail;
 	}
 
+	private String printId() {
+		return "ID:        " + id + lineSeparator;
+	}
+
+	private String printFullName() {
+		return "Full name: " + name + lineSeparator;
+	}
+
+	private String printMail() {
+		return "Mail:      " + mail + lineSeparator;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("User:").append(lineSeparator);
+		sb.append("-----").append(lineSeparator);
+		sb.append(printFullName());
+		sb.append(printId());
+		sb.append(printMail());
+		return sb.toString();
+	}
 }

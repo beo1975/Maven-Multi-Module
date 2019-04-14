@@ -36,5 +36,4 @@ public class UserDAOImpl implements UserDAO {
 	public void delete(int id) {
 		users.remove(id);
 	}
-
 }
