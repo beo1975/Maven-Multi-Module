@@ -5,7 +5,7 @@
 
 	<groupId>com.benito.user</groupId>
 	<artifactId>UserParent</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0</version>
 	<packaging>pom</packaging>
 
 	<name>UserParent</name>
@@ -13,6 +13,7 @@
 
 	<modules>
 		<module>UserServices</module>
+		<module>UserWeb</module>
 	</modules>
 
 	<properties>
