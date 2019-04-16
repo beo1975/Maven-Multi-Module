@@ -1,0 +1,14 @@
+# Build very simple java library with Maven, Open JDK 8
+
+before_install:
+  # Set Maven builder executable permissions
+  - chmod +x mvnw
+
+language: java
+install: true
+jdk: openjdk8
+
+script:
+  # Use Gradle as builder
+  - ./mvnw install
+
