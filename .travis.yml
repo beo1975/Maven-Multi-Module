@@ -9,5 +9,7 @@ install: true
 jdk: openjdk8
 
 script:
-  # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
-  - ./mvnw clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
+  # the following command line runs the tests with coverage and builds the project
+  - ./mvnw clean install
+  # the following command line executes the SonarCloud analysis
+  #- ./mvnw sonar:sonar
