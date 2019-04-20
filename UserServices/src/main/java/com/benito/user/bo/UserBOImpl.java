@@ -21,4 +21,8 @@ public class UserBOImpl implements UserBO {
 	public UserDAO getDao() {
 		return dao;
 	}
+
+	public void setDao(UserDAO dao) {
+		this.dao = dao;
+	}
 }
