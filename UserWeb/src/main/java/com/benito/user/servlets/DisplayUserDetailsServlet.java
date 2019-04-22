@@ -10,11 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.BeansException;
-import org.springframework.web.context.WebApplicationContext;
-import org.springframework.web.context.support.WebApplicationContextUtils;
-
-import com.benito.user.bo.UserBO;
-import com.benito.user.dto.User;
 
 /**
  * Servlet implementation class DisplayUserDetailsServlet
@@ -30,18 +25,18 @@ public class DisplayUserDetailsServlet extends HttpServlet {
 		try {
 			response.getWriter().append("Served at: ").append(request.getContextPath());
 
-			WebApplicationContext context = WebApplicationContextUtils
-					.getRequiredWebApplicationContext(this.getServletContext());
-			UserBO bo = (UserBO) context.getBean("userbo");
-			User user = bo.findUser(Integer.parseInt(request.getParameter("id")));
-
+			/*
+			 * WebApplicationContext context = WebApplicationContextUtils
+			 * .getRequiredWebApplicationContext(this.getServletContext()); UserBO bo =
+			 * (UserBO) context.getBean("userbo"); User user =
+			 * bo.findUser(Integer.parseInt(request.getParameter("id")));
+			 */
 			PrintWriter out = response.getWriter();
-			out.println();
 			out.println("User details");
-			out.println("User ID:     " + user.getId());
-			out.println("User Name:   " + user.getName());
-			out.println("User e-mail: " + user.getMail());
-
+			/*
+			 * out.println("User ID:     " + user.getId()); out.println("User Name:   " +
+			 * user.getName()); out.println("User e-mail: " + user.getMail());
+			 */
 		} catch (NumberFormatException e) {
 			logger.log(Level.SEVERE, "NumberFormatException thrown");
 		} catch (BeansException e) {

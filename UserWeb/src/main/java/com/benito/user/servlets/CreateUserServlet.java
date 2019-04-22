@@ -11,11 +11,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.beans.BeansException;
-import org.springframework.web.context.WebApplicationContext;
-import org.springframework.web.context.support.WebApplicationContextUtils;
-
-import com.benito.user.bo.UserBO;
 import com.benito.user.dto.User;
 
 /**
@@ -43,16 +38,14 @@ public class CreateUserServlet extends HttpServlet {
 		User user = new User(id, name);
 		user.setMail(mail);
 
-		try {
-			WebApplicationContext context = WebApplicationContextUtils
-					.getRequiredWebApplicationContext(this.getServletContext());
-			UserBO bo = (UserBO) context.getBean("userbo");
-			bo.create(user);
-
-		} catch (IllegalStateException | BeansException e) {
-			logger.log(Level.SEVERE, "Exception thrown");
-		}
-
+		/*
+		 * try { WebApplicationContext context = WebApplicationContextUtils
+		 * .getRequiredWebApplicationContext(this.getServletContext()); UserBO bo =
+		 * (UserBO) context.getBean("userbo"); bo.create(user);
+		 * 
+		 * } catch (IllegalStateException | BeansException e) { logger.log(Level.SEVERE,
+		 * "Exception thrown"); }
+		 */
 		try {
 			PrintWriter out = response.getWriter();
 			out.print("User created!!!");
